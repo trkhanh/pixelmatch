@@ -31,5 +31,5 @@
   ],
   "eslintConfig": {
     "extends": "mourner"
-  },
+  }
 }

@@ -72,6 +72,7 @@ function diffTest(imgPath1, imgPath2, diffPath, options, expectedMismatch) {
 function readImage(name) {
     return PNG.sync.read(fs.readFileSync(path.join(__dirname, `fixtures/${name}.png`)));
 }
+
 function writeImage(name, image) {
     fs.writeFileSync(path.join(__dirname, `fixtures/${name}.png`), PNG.sync.write(image));
 }

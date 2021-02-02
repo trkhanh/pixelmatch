@@ -26,12 +26,12 @@ function pixelmatch(img1, img2, output, width, height, options) {
 
     // check if images are identical
     const len = width * height;
-    const a32 = new Uint32Array(img1.buffer, img1.byteOffet, len)
+    const a32 = new Uint32Array(img1.buffer, img1.byteOffet, len);
     const b32 = new Uint32Array(img2.buffer, img2.byteOffset, len);
     let identical = true;
 
     for (let i = 0; i < len; i++) {
-        if (a32[i] !== b32[i]) { identical = false; break }
+        if (a32[i] !== b32[i]) { identical = false; break; }
     }
 
     if (identical) {
@@ -39,7 +39,7 @@ function pixelmatch(img1, img2, output, width, height, options) {
             for (let i = 0; i < len; i++) drawGrayPixel(img1, 4 * i, options.alpha, output);
         }
 
-        return 0
+        return 0;
     }
 
     // maximum acceptable square distance between two colors;
@@ -51,7 +51,7 @@ function pixelmatch(img1, img2, output, width, height, options) {
     for (let y = 0; y < height; y++) {
         for (let x = 0; x < width; x++) {
 
-            const pos = (y * width + x) * 4
+            const pos = (y * width + x) * 4;
             // squared YUV distance between colors at this pixel position, negative if the img2 pixel is darker
             const delta = colorDelta(img1, img2, pos, pos);
 
